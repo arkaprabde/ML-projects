@@ -1,0 +1,21 @@
+import pandas as pd
+form sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
+f = pd.read_csv("**path to csv file containing data**")
+#loading dataset('class' column renamed as 'types')
+
+y = f.types #outputs
+x = f.drop('types', axis = 1) #parameters
+
+x1, x2, y1, y2 = train_test_split(x, y, test_size = 0.2)
+#splitting data into training and testing
+
+d = DescisionTree_Classifier() #algorithm
+
+d.fit(x1, y1) #training
+
+yy = d.predict(x2) #testing
+
+print("Accuracy : ", accuracy_score(yy, y2) * 100) #accuracy display
